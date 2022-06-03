@@ -1,32 +1,32 @@
 #include <iostream>
-#define MAX 10 //maksimum data stack
+#define MAX 100 //nilai maksimum data stack
 using namespace std;
 
 struct Stack {
-    int top; 
+    int puncak; 
 	int data[MAX];
 } S;
 
 void init() {
-    S.top = -1;
+    S.puncak = -1;
 }
  
 bool isEmpty() {
-    return S.top == -1;
+    return S.puncak == -1;
 }
  
 bool isFull() {
-    return S.top == MAX -1;
+    return S.puncak == MAX -1;
 }
  
 void push() {
     if (isFull()) {
         cout << "\nStack Penuh" << endl;
     } else {
-        S.top++;
+        S.puncak++;
         cout << "\nMasukkan data : ";
-        cin >> S.data[S.top];
-        cout << "\n Data : '" << S.data[S.top] <<endl; 
+        cin >> S.data[S.puncak];
+        cout << "\n Data : '" << S.data[S.puncak] <<endl; 
 		cout << "Data Ditambahkan"<< endl;
     }
 }
@@ -35,9 +35,9 @@ void pop() {
     if (isEmpty()) {
         cout << "\nStack Is Empty !! " << endl;
     } else {
-        cout << "\n Data :"<<S.data[S.top] <<endl;
+        cout << "\n Data :"<<S.data[S.puncak] <<endl;
         cout << "Data Dihapus" << endl;
-        S.top--;
+        S.puncak--;
     }
 }
  
@@ -46,7 +46,7 @@ void printStack() {
         cout<< "\nStack Kosong\n";
     } else {
         cout << "Data Stack : ";
-        for (int i = S.top; i >= 0; i--)
+        for (int i = S.puncak; i >= 0; i--)
             cout << S.data[i] <<  ( ",");
     }
 }
